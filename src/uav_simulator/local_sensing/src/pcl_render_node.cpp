@@ -161,12 +161,25 @@ void pubCameraPose(const ros::TimerEvent & event)
 
 void renderSensedPoints(const ros::TimerEvent & event)
 { 
+  ros::Time start_time = ros::Time::now();
+
   //if(! has_global_map || ! has_odom) return;
   if( !has_global_map && !has_local_map) return;
   
   if( !has_odom ) return;
   render_currentpose();
   render_pcl_world();
+
+  ros::Time current_time = ros::Time::now();
+  double dt = (current_time - start_time).toSec()*1000;
+  // cout <<"renderSensedPoints: " << dt << "ms" << endl;
+
+    std::ofstream outFile("/home/do/workspace/projects/AeroMaze/ego-planner/output/renderSensedPoints.txt", std::ios::app); // Correct way to open a file in append mode
+    outFile <<dt <<std::endl;
+    outFile.close(); // Close the file stream     
+
+
+
 }
 
 vector<float> cloud_data;
@@ -320,6 +333,11 @@ void render_currentpose()
 
 int main(int argc, char **argv)
 {
+
+  std::ofstream outFile("/home/do/workspace/projects/AeroMaze/ego-planner/output/renderSensedPoints.txt"); // Correct way to open a file in append mode
+  outFile.close(); // Close the file stream
+
+
   ros::init(argc, argv, "pcl_render");
   ros::NodeHandle nh("~");
 

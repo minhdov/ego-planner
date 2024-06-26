@@ -1,0 +1,3 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/mockamap_node.dir/src/ces_randommap.cpp.o[0m
+[ 40%] [32m[1mLinking CXX executable /home/do/workspace/projects/AeroMaze/ego-planner/devel/.private/mockamap/lib/mockamap/mockamap_node[0m
+[100%] Built target mockamap_node

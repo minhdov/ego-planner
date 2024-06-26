@@ -6,6 +6,27 @@ namespace ego_planner
 
   void EGOReplanFSM::init(ros::NodeHandle &nh)
   {
+
+    std::ofstream outFile("/home/do/workspace/projects/AeroMaze/ego-planner/output/execFSMCallback.txt"); // Correct way to open a file in append mode
+
+    if (outFile.is_open()) {
+        std::cout << "File created successfully." << std::endl;
+    } else {
+        std::cerr << "Error: Unable to create file." << std::endl;
+    }
+
+    outFile.close(); // Close the file stream
+
+    std::ofstream outFile2("/home/do/workspace/projects/AeroMaze/ego-planner/output/checkCollisionCallback.txt"); // Correct way to open a file in append mode
+
+    if (outFile2.is_open()) {
+        std::cout << "File created successfully." << std::endl;
+    } else {
+        std::cerr << "Error: Unable to create file." << std::endl;
+    }
+
+    outFile2.close(); // Close the file stream
+
     current_wp_ = 0;
     exec_state_ = FSM_EXEC_STATE::INIT;
     have_target_ = false;
@@ -33,8 +54,8 @@ namespace ego_planner
     planner_manager_->initPlanModules(nh, visualization_);
 
     /* callback */
-    exec_timer_ = nh.createTimer(ros::Duration(0.01), &EGOReplanFSM::execFSMCallback, this);
-    safety_timer_ = nh.createTimer(ros::Duration(0.05), &EGOReplanFSM::checkCollisionCallback, this);
+    exec_timer_ = nh.createTimer(ros::Duration(0.01), &EGOReplanFSM::execFSMCallback, this); //100hz
+    safety_timer_ = nh.createTimer(ros::Duration(0.05), &EGOReplanFSM::checkCollisionCallback, this); //20hz
 
     odom_sub_ = nh.subscribe("/odom_world", 1, &EGOReplanFSM::odometryCallback, this);
 
@@ -200,6 +221,7 @@ namespace ego_planner
 
   void EGOReplanFSM::execFSMCallback(const ros::TimerEvent &e)
   {
+    ros::Time start_time = ros::Time::now();
 
     static int fsm_num = 0;
     fsm_num++;
@@ -340,6 +362,15 @@ namespace ego_planner
 
     data_disp_.header.stamp = ros::Time::now();
     data_disp_pub_.publish(data_disp_);
+
+    ros::Time current_time = ros::Time::now();
+    double dt = (current_time - start_time).toSec()*1000;
+    // cout <<"execFSMCallback time ***********************************************************: " << dt << "ms" << endl;
+
+    std::ofstream outFile("/home/do/workspace/projects/AeroMaze/ego-planner/output/execFSMCallback.txt", std::ios::app); // Correct way to open a file in append mode
+    outFile <<dt <<std::endl;
+    outFile.close(); // Close the file stream     
+
   }
 
   bool EGOReplanFSM::planFromCurrentTraj()
@@ -376,6 +407,9 @@ namespace ego_planner
 
   void EGOReplanFSM::checkCollisionCallback(const ros::TimerEvent &e)
   {
+
+    ros::Time start_time = ros::Time::now();
+
     LocalTrajData *info = &planner_manager_->local_data_;
     auto map = planner_manager_->grid_map_;
 
@@ -415,6 +449,15 @@ namespace ego_planner
         break;
       }
     }
+
+    ros::Time current_time = ros::Time::now();
+    double dt = (current_time - start_time).toSec()*1000;
+    // cout <<"execFSMCallback time ***********************************************************: " << dt << "ms" << endl;
+
+    std::ofstream outFile("/home/do/workspace/projects/AeroMaze/ego-planner/output/checkCollisionCallback.txt", std::ios::app); // Correct way to open a file in append mode
+    outFile <<dt <<std::endl;
+    outFile.close(); // Close the file stream   
+
   }
 
   bool EGOReplanFSM::callReboundReplan(bool flag_use_poly_init, bool flag_randomPolyTraj)

@@ -1,0 +1,5 @@
+[ 33%] Built target SO3Control
+[ 66%] Built target control_example
+[ 83%] [32mBuilding CXX object CMakeFiles/so3_control_nodelet.dir/src/so3_control_nodelet.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library /home/do/workspace/projects/AeroMaze/ego-planner/devel/.private/so3_control/lib/libso3_control_nodelet.so[0m
+[100%] Built target so3_control_nodelet

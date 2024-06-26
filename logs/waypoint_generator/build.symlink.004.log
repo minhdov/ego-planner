@@ -1,0 +1,4 @@
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/waypoint_generator/cmake/waypoint_generatorConfig.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/waypoint_generator/cmake/waypoint_generatorConfig-version.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/pkgconfig/waypoint_generator.pc
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/waypoint_generator/waypoint_generator

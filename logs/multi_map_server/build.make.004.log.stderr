@@ -1,0 +1,8 @@
+[01m[K/home/do/workspace/projects/AeroMaze/ego-planner/src/uav_simulator/Utils/multi_map_server/src/multi_map_visualization.cc:6:10:[m[K [01;31m[Kfatal error: [m[Kmulti_map_server/MultiSparseMap3D.h: No such file or directory
+    6 | #include [01;31m[K<multi_map_server/MultiSparseMap3D.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/multi_map_visualization.dir/build.make:63: CMakeFiles/multi_map_visualization.dir/src/multi_map_visualization.cc.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:334: CMakeFiles/multi_map_visualization.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

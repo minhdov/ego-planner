@@ -1,14 +1,15 @@
-# 20240528
-# Reference
-https://github.com/minhdov/ego-planner
+1. Simple run
+source devel/setup.bash && roslaunch ego_planner simple_run.launch
 
-# Build
-- Successful
-
-# RUN
-rm -rf /home/do/.ros
-
+2. Target point selection
 source devel/setup.bash && roslaunch ego_planner rviz.launch
 source devel/setup.bash && roslaunch ego_planner run_in_sim.launch
 
-source devel/setup.bash && roslaunch ego_planner simple_run.launch
+
+
+
+
+
+
+
+

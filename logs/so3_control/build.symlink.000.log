@@ -1,0 +1,6 @@
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/so3_control/cmake/so3_controlConfig-version.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/so3_control/cmake/so3_controlConfig.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/libSO3Control.so
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/libso3_control_nodelet.so
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/pkgconfig/so3_control.pc
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/so3_control/control_example

@@ -1,0 +1,4 @@
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/pose_utils/cmake/pose_utilsConfig-version.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/pose_utils/cmake/pose_utilsConfig.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/libpose_utils.so
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/pkgconfig/pose_utils.pc

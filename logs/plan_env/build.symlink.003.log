@@ -1,0 +1,4 @@
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/plan_env/cmake/plan_envConfig-version.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/plan_env/cmake/plan_envConfig.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/libplan_env.so
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/pkgconfig/plan_env.pc

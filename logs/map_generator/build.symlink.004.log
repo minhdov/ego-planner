@@ -1,0 +1,4 @@
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/map_generator/cmake/map_generatorConfig-version.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/share/map_generator/cmake/map_generatorConfig.cmake
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/map_generator/random_forest
+Symlinking /home/do/workspace/projects/AeroMaze/ego-planner/devel/lib/pkgconfig/map_generator.pc
